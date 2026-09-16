@@ -1,0 +1,58 @@
+div[class*="boks1"] {
+    background-color: rgba(95, 158, 160, 0.5);
+    
+}
+
+.boks2 {
+    background-color: #FF5733;
+    
+
+}
+
+.boks3 {
+    background-color: rgb(255, 0, 34);
+    background-image: url("https://picsum.photos/400/200");
+    background-size: contain;
+    /* det gjør bildet fyller hele boksen, og da kan deler av bilder bli kuttet av */
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+h1 {
+   color: hsl(11, 100%, 60%);
+}
+
+p:nth-child(3) {
+    background-color: rgba(95, 158, 160, 0.5);
+}
+
+p:nth-child(4) {
+    background-color: #FF5733;
+}
+
+p:nth-child(5) {
+    background-color: rgb(255, 0, 34);
+}
+
+/* rgba endrer fargene med et set nivå av gjennomsiktighet. HSL endrer fargene med et sett nivå av lysstyrke og metning. */
+
+body {
+    font-family: 'Gill Sans', 'Arial', sans-serif;
+    h1 {
+        font-size: 32px;
+        font-weight: 700;          
+    }
+
+    p {
+        font-size: 32px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        /* det gjør den ene linje større og har mer mellomrom */
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}

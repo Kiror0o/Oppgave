@@ -14,7 +14,7 @@ body {
 /* Header og navigasjon */
 
 header {
-    background-color: #333;
+    background-color: cadetblue;
     /* padding: 1rem; */
     padding: 1rem 2rem 3rem;
 
@@ -32,6 +32,24 @@ header {
             }
         }
     }
+}
+
+nav {
+    background-color: #ffa5a5;
+    padding: 1rem 2rem 3rem;
+
+    span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    ul {
+            list-style: none;
+            li{
+                display: inline-block;
+            }
+        }
 }
 
 /* Hovedinnhold */
