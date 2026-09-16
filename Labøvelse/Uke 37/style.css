@@ -1,55 +1,51 @@
-/* Globale stilregler*/
+/* Globale stilregler */
 
 * {
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffeff;
-    color: #3d498f;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #222831;
+    line-height: 1.5;
 }
 
 /* Header og navigasjon */
 
 header {
-    background-color: cadetblue;
-    /* padding: 1rem; */
-    padding: 1rem 2rem 3rem;
+    background-color: #1e3a5f;
+    padding: 2rem 1rem;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     span {
         font-size: 1.5rem;
         font-weight: bold;
-        letter-spacing: 2px;            
+        letter-spacing: 1px;
     }
 
     nav {
         ul {
             list-style: none;
-            li{
-                display: inline-block;
+            display: flex;
+            gap: 1rem;
+            li {
+                a {
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
-}
-
-nav {
-    background-color: #ffa5a5;
-    padding: 1rem 2rem 3rem;
-
-    span {
-        font-size: 1.5rem;
-        font-weight: bold;
-        letter-spacing: 2px;
-    }
-
-    ul {
-            list-style: none;
-            li{
-                display: inline-block;
-            }
-        }
 }
 
 /* Hovedinnhold */
@@ -57,11 +53,37 @@ main {
     max-width: 900px;
     margin: 32px auto;
     padding: 0 1.5rem;
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'hovedinnhold sidepanel';
+    gap: 1rem;
+
+    .hovedinnhold {
+        grid-column-start:1;
+        grid-column-end: 2;
+        /* grid-area: 'hovedinnhold' */
+    }
+
+    .sidepanel {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        /* grid-area: 'sidepanel' */
+    }
+
 }
 
 article {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
     padding: 1rem 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -95,6 +117,9 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
 
     p {
     margin: 0 0 4px;
