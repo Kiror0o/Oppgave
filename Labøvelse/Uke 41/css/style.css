@@ -1,0 +1,249 @@
+/* ==========================================================================
+   1. Global Resets & Document Defaults
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Header & Navigation Component
+   ========================================================================== */
+header .header-intro {
+    padding: 3rem;
+}
+
+nav {
+    background-color: #efefef;
+    padding: 1rem;
+}
+
+nav #logo {
+    display: inline-block;
+    font-size: 25px;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    letter-spacing: -1px; /* Fixed: Stopped letters from aggressively crushing into a black hole */
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li a {
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Base mobile navigation structure */
+header nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   3. Content Blocks & Grid System (Mobile First defaults)
+   ========================================================================== */
+.grid-row {
+    display: block; /* Content rows stack naturally on mobile viewports */
+    margin-bottom: 3rem;
+}
+
+/* Alternating odd color bands on main content sections wrapper */
+main > .grid-row:nth-child(odd) {
+    background-color: #1e4772;
+    color: #fff;
+}
+
+.text-content {
+    padding: 2rem 1.5rem; /* Clean default text padding for thumb-scrolling */
+}
+
+.text-content h2 {
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Media/Image Containers */
+figure {
+    margin: 0;
+    padding: 0;
+}  
+
+img {
+    max-width: 100%; /* Fixed: Prevents small assets from stretching and blurring */
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   4. Buttons & Interactive States
+   ========================================================================== */
+.btn {
+    display: inline-block; /* Fixed: Allows vertical margins and padding to compute correctly */
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #1e4772;
+    color: #1e4772; /* Fixed: Dark text on light gray cards so it's actually readable */
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #1e4772;
+    color: #fff;
+}
+
+/* Button variants specifically for inside your dark blue rows */
+main > .grid-row:nth-child(odd) .btn,
+#booking .btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+main > .grid-row:nth-child(odd) .btn:hover,
+#booking .btn:hover {
+    background-color: #fff;
+    color: #1e4772;
+}
+
+/* ==========================================================================
+   5. Services Section (#tjenester)
+   ========================================================================== */
+#tjenester {
+    padding: 3rem 1.5rem;
+}
+
+#tjenester article {
+    background-color: #efefef;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    color: #333;
+}
+
+#tjenester #booking {
+    background-color: #1e4772;
+    color: #fff;
+}
+
+/* ==========================================================================
+   6. Footer Grid System
+   ========================================================================== */
+footer {
+    background-color: #383735;
+    color: #fff;
+    padding: 3rem 1.5rem;
+}
+
+#footer-logo {
+    display: inline-block;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    padding: 0.5rem 0;
+}
+
+#some {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#some i {
+    font-size: 40px;
+}
+
+/* ==========================================================================
+   7. Media Queries (Pris-winning Desktop Adjustments)
+   ========================================================================== */
+@media only screen and (min-width: 680px) {
+    /* Header Navigation Desktop Row layout */
+    header nav {
+        flex-direction: row;
+        padding: 1rem 3rem;
+    }
+
+    nav #logo {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 0;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Fixed: Targeted class handles specific row splits instead of global elements! */
+    .grid-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .text-content {
+        padding: 4rem;
+    }
+
+    /* Magic column alternating rule */
+    .change-order figure {
+        order: 2; 
+    }
+    .change-order .text-content {
+        order: 1;
+    }
+
+    /* Desktop Footer Grid placement */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        padding: 4rem 3rem;
+    }
+
+    #footer-logo {
+        grid-column: 1 / -1;
+    }
+}
