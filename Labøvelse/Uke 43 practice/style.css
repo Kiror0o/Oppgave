@@ -1,0 +1,189 @@
+/* ==========================================================================
+   1. Base Setup & Global Variables
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    background-color: #fafafa; /* Apple's signature clean light-gray background */
+    color: #1d1d1f;            /* Modern dark text color */
+    line-height: 1.5;
+}
+
+/* Keep this only if you still have an intro-pic element in your HTML header */
+.intro-pic {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Eyebrow text above the main header */
+.eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+    color: #86868b; /* Subtle muted gray */
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   2. Mobile-First Navigation Component (Default)
+   ========================================================================== */
+.site-header {
+    position: fixed;        /* Locks the navigation bar to the absolute top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;          /* Ensures it floats safely on top of all your showcase images */
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent clean white background */
+    backdrop-filter: blur(20px); /* The magic Apple frost-glass blur effect! */
+    -webkit-backdrop-filter: blur(20px); /* Required support safari rendering engine link */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Hairline accent divider divider border */
+}
+
+.nav-global {
+    display: flex;
+    flex-direction: row;     /* Mobile layout elements stay side-by-side naturally */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1024px;       /* Constrains maximum width line scale on wide viewports */
+    margin: 0 auto;
+}
+
+#logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: #1d1d1f;          /* Modern premium deep slate black color link text */
+    letter-spacing: -0.5px;
+    transition: opacity 0.2s ease;
+}
+
+#logo:hover {
+    opacity: 0.7;            /* Subtle interactive animation style feedback */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;             /* Even spacing padding links elements */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #515154;          /* Muted ash-gray links typography tone */
+    transition: color 0.2s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #0066cc;          /* Soft ocean blue accent color state change */
+}
+
+/* ==========================================================================
+   3. Mobile-First Content Showcase View
+   ========================================================================== */
+.apple-showcase {
+    margin-top: 50px;       /* Adds a safety cushion so the floating top bar doesn't cover your text! */
+}
+
+.feature-slice {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    border-bottom: 1px solid #f5f5f7;
+    gap: 2rem;
+}
+
+.feature-graphic {
+    width: 100%;
+    margin: 0;
+}
+
+.showcase-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain; /* Keeps her full artwork completely sharp and un-cropped */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
+}
+
+.showcase-img:hover {
+    transform: scale(1.02); /* Subtle sleek zoom effect when interacting */
+}
+
+.feature-text {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center; /* Centered layout for mobile viewing */
+}
+
+.feature-text h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.feature-text p {
+    font-size: 1.05rem;
+    color: #515154;
+}
+
+/* ==========================================================================
+   4. Desktop Viewport Blueprint (Unified Media Query Breakpoint at 768px+)
+   ========================================================================== */
+@media only screen and (min-width: 768px) {
+    
+    /* Navigation responsive updates */
+    .nav-global {
+        padding: 0.85rem 3rem; /* Extra breathing space on wide monitors */
+    }
+    
+    /* Layout framework alignment constraint changes */
+    .apple-showcase {
+        max-width: 1200px;
+        margin: 80px auto 0 auto; /* Merged: Combined your top margin cushion and auto-centering! */
+    }
+
+    /* Transform slices into a balanced 50/50 side-by-side split grid */
+    .feature-slice {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+        padding: 6rem 2rem;
+    }
+
+    .feature-text {
+        text-align: left; /* Left-aligned like a real Apple spec block */
+        margin: 0;
+    }
+
+    .feature-text h2 {
+        font-size: 3rem; /* Massive bold Apple statement typography */
+    }
+
+    /* Seamless column alternating engine */
+    .slice-reverse .feature-graphic {
+        order: 2;
+    }
+    
+    .slice-reverse .feature-text {
+        order: 1;
+    }
+}
