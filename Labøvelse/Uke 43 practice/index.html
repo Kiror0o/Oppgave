@@ -7,61 +7,137 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+
+    <!-- Premium Fixed Blurred Navigation Bar Component -->
     <header class="site-header">
-    <div class="nav-global"> <!-- Added this structural box for alignment control! -->
-        <a href="index.html" id="logo">Furina</a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#appearance">Design</a></li>
-                <li><a href="#personality">Persona</a></li>
-                <li><a href="#abilities">Power</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-       <main class="apple-showcase"> <!-- this is only an inspiration for the layout of apple product showcase-->
+        <div class="nav-global">
+            <a href="index.html" id="logo">Furina</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#appearance">Design</a></li>
+                    <li><a href="#personality">Persona</a></li>
+                    <li><a href="#abilities">Power</a></li>
+                    <li><a href="#combat-specs" class="glowing-nav">Pro Specs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Stream Component -->
+    <main class="apple-showcase">
     
-    <!-- Hero Showcase 1: Flowing Style (Image Left, Text Right on Desktop) -->
-    <section id="appearance" class="feature-slice">
-        <figure class="feature-graphic">
-            <!-- Large web URL matching her modern blue design -->
-            <img src="https://static.wikia.nocookie.net/gensin-impact/images/2/27/Furina_Card.png/revision/latest?cb=20230925100151" 
-                 alt="Furina design detail showcase" class="showcase-img">
-        </figure>
-        <div class="feature-text">
-            <span class="eyebrow">Design & Aesthetics</span>
-            <h2>Flowing Blue Silhouette.</h2>
-            <p>Portrayed with flowing blue hair and elegant royal attire that reflects her status as a deity. Every detail incorporates elements of water, seamlessly engineering her connection to the Hydro element.</p>
+        <!-- Hero Showcase 1: Flowing Style (Image Left, Text Right on Desktop) -->
+        <section id="appearance" class="feature-slice">
+            <figure class="feature-graphic">
+                <img src="https://static.wikia.nocookie.net/gensin-impact/images/2/27/Furina_Card.png/revision/latest?cb=20230925100151" 
+                     alt="Furina design detail showcase" class="showcase-img">
+            </figure>
+            <div class="feature-text">
+                <span class="eyebrow">Design & Aesthetics</span>
+                <h2>Flowing Blue Silhouette.</h2>
+                <p>Portrayed with flowing blue hair and elegant royal attire that reflects her status as a deity. Every detail incorporates elements of water, seamlessly engineering her connection to the Hydro element.</p>
+            </div>
+        </section>
+
+        <!-- Hero Showcase 2: Persona (Text Left, Image Right on Desktop) -->
+        <section id="personality" class="feature-slice slice-reverse">
+            <figure class="feature-graphic">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5_qhoipkTxYHWzDmCBKY6-G9ksoNvPgT2MH28jrOs4h6U4kz4plB9qo&s=10" 
+                     alt="Furina theatrical persona showcase" class="showcase-img">
+            </figure>
+            <div class="feature-text">
+                <span class="eyebrow">The Demeanor</span>
+                <h2>Calm. Composed. Theatrical.</h2>
+                <p>Known for her striking and dramatic presence. She values fairness above all else, guided by a strong moral compass to maintain absolute harmony within her domain.</p>
+            </div>
+        </section>
+
+        <!-- Hero Showcase 3: Combat Engineering (Image Left, Text Right on Desktop) -->
+        <section id="abilities" class="feature-slice">
+            <figure class="feature-graphic">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLjQc3QHtohpZL5lVCxg6Khw1fm-gf2ho_OnKrt02DlQ&s=10" 
+                     alt="Hydro elemental energy showcase" class="showcase-img">
+            </figure>
+            <div class="feature-text">
+                <span class="eyebrow">Hydro Core Power</span>
+                <h2>Pure elemental control.</h2>
+                <p>Possesses powerful Hydro abilities, allowing her to manipulate water and dominate the battlefield with fluid precision. Built for absolute utility and performance.</p>
+            </div>
+        </section>
+
+        <!-- The Cinematic Scroll Transition Zone -->
+        <div class="scroll-fade-zone">
+            <!-- Hero Showcase 4: Cinematic Premium Dark Slice Component -->
+            <section id="combat-specs" class="feature-slice slice-dark">
+                <figure class="feature-graphic">
+                    <!-- FIXED: Deployed a reliable, crisp rendering anchor link for her bubble illustration asset -->
+                    <img src="https://preview.redd.it/i-only-just-noticed-that-her-splash-art-has-her-other-white-v0-o05csomf1rzb1.png?width=1080&crop=smart&auto=webp&s=3b522997ceda6ded5ad5093a1b74a18a7e7bb421" 
+                         alt="Furina activating her ultimate Hydro stage theater" class="showcase-img">
+                </figure>
+                <div class="feature-text">
+                    <span class="eyebrow glowing-text">Pro Performance</span>
+                    <h2>Salon Solitaire. <br><span class="hydro-fade">Fluid Combat Engineering.</span></h2>
+                    <p>Unleash powerful Hydro abilities that dictate the entire layout of the battlefield. Spawns programmatic guests to deal continuous elemental damage while dynamically adjusting team health parameters with maximum utility.</p>
+                </div>
+            </section>
+        </div>
+
+            <!-- Apple-Style Character Family Grid Showcase Component -->
+    <section class="product-shelf-zone">
+        <div class="shelf-header">
+            <h2>Which character is right for your team?</h2>
+            <a href="#" class="apple-link">Compare all characters <span class="chevron">&gt;</span></a>
+        </div>
+
+        <div class="product-grid">
+            <!-- Card 1: Raiden Shogun -->
+            <div class="product-card">
+                <figure class="card-graphic">
+                    <img src="https://cdn.prydwen.gg/images/genshin-impact/characters/raiden-shogun_full.webp" alt="Raiden Shogun render" class="card-img">
+                </figure>
+                <div class="card-info">
+                    <span class="card-eyebrow Electro">Electro Core</span>
+                    <h3>Raiden Shogun</h3>
+                    <p class="card-tagline">Absolute Sovereign Energy.</p>
+                    <p class="card-desc">Features unmatched high-voltage energy generation and structural burst scaling loops for your rotation.</p>
+                    <a href="#" class="card-cta-link">Learn more <span class="chevron">&gt;</span></a>
+                </div>
+            </div>
+
+            <!-- Card 2: Columbina -->
+            <div class="product-card">
+                <figure class="card-graphic">
+                    <img src="https://cdn.prydwen.gg/images/genshin-impact/characters/columbina_full.webp" alt="Columbina render" class="card-img">
+                </figure>
+                <div class="card-info">
+                    <span class="card-eyebrow Cryo">Fatui Pro</span>
+                    <h3>Columbina</h3>
+                    <p class="card-tagline">Theatrical Mystery.</p>
+                    <p class="card-desc">Engineered with elegant, silent pacing thresholds and mysterious structural performance metrics.</p>
+                    <a href="#" class="card-cta-link">Learn more <span class="chevron">&gt;</span></a>
+                </div>
+            </div>
+
+            <!-- Card 3: Nahida -->
+            <div class="product-card">
+                <figure class="card-graphic">
+                    <img src="https://kqm-uploads.keqingmains.com/wp-content/uploads/2025/04/Nahida-Gacha-Splash.webp" alt="Nahida render" class="card-img">
+                </figure>
+                <div class="card-info">
+                    <span class="card-eyebrow Dendro">Dendro Core</span>
+                    <h3>Nahida</h3>
+                    <p class="card-tagline">Infinite Wisdom Processing.</p>
+                    <p class="card-desc">Employs massive elemental link affinity matrices to trace and chain targets simultaneously across fields.</p>
+                    <a href="#" class="card-cta-link">Learn more <span class="chevron">&gt;</span></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Hero Showcase 2: Persona (Text Left, Image Right on Desktop) -->
-    <section id="personality" class="feature-slice slice-reverse">
-        <figure class="feature-graphic">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP5_qhoipkTxYHWzDmCBKY6-G9ksoNvPgT2MH28jrOs4h6U4kz4plB9qo&s=10" 
-                 alt="Furina theatrical persona showcase" class="showcase-img">
-        </figure>
-        <div class="feature-text">
-            <span class="eyebrow">The Demeanor</span>
-            <h2>Calm. Composed. Theatrical.</h2>
-            <p>Known for her striking and dramatic presence. She values fairness above all else, guided by a strong moral compass to maintain absolute harmony within her domain.</p>
-        </div>
-    </section>
 
-    <!-- Hero Showcase 3: Combat Engineering (Image Left, Text Right on Desktop) -->
-    <section id="abilities" class="feature-slice">
-        <figure class="feature-graphic">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLjQc3QHtohpZL5lVCxg6Khw1fm-gf2ho_OnKrt02DlQ&s=10" 
-                 alt="Hydro elemental energy showcase" class="showcase-img">
-        </figure>
-        <div class="feature-text">
-            <span class="eyebrow">Hydro Core Power</span>
-            <h2>Pure elemental control.</h2>
-            <p>Possesses powerful Hydro abilities, allowing her to manipulate water and dominate the battlefield with fluid precision. Built for absolute utility and performance.</p>
-        </div>
-    </section>
-</main>
+    </main>
 
+    <!-- Global Footer Branding Component -->
     <footer class="site-footer">
         <p>&copy; 2026 Fontaine Court Records. Fan page created by Suzuki.</p>
     </footer>

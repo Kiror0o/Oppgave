@@ -1,11 +1,21 @@
 /* ==========================================================================
    1. Base Setup & Global Variables
    ========================================================================== */
+html {
+    scroll-behavior: smooth; /* The magic rule that turns ugly snapping into silk! */
+    /* Gives our sections a protective breathing cushion so the floating top bar doesn't overlay your headlines! */
+section[id] {
+    scroll-margin-top: 70px; 
+}
+
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 
 body {
     font-family: 'Montserrat', -apple-system, sans-serif;
@@ -125,42 +135,20 @@ body {
     transform: scale(1.02); /* Subtle sleek zoom effect when interacting */
 }
 
-.feature-text {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center; /* Centered layout for mobile viewing */
-}
-
-.feature-text h2 {
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.feature-text p {
-    font-size: 1.05rem;
-    color: #515154;
-}
 
 /* ==========================================================================
    4. Desktop Viewport Blueprint (Unified Media Query Breakpoint at 768px+)
    ========================================================================== */
 @media only screen and (min-width: 768px) {
-    
-    /* Navigation responsive updates */
     .nav-global {
         padding: 0.85rem 3rem; /* Extra breathing space on wide monitors */
     }
     
-    /* Layout framework alignment constraint changes */
     .apple-showcase {
         max-width: 1200px;
-        margin: 80px auto 0 auto; /* Merged: Combined your top margin cushion and auto-centering! */
+        margin: 80px auto 0 auto; 
     }
 
-    /* Transform slices into a balanced 50/50 side-by-side split grid */
     .feature-slice {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -178,7 +166,7 @@ body {
         font-size: 3rem; /* Massive bold Apple statement typography */
     }
 
-    /* Seamless column alternating engine */
+    /* Seamless column alternating engine layout */
     .slice-reverse .feature-graphic {
         order: 2;
     }
@@ -186,4 +174,198 @@ body {
     .slice-reverse .feature-text {
         order: 1;
     }
+} /* Safe media query closure brace! */
+
+/* ==========================================================================
+   5. Premium "Pro" Dark-Mode Variant Block
+   ========================================================================== */
+main .slice-dark,
+.feature-slice.slice-dark {
+    background-color: transparent !important; /* Managed by the wrapper backdrop now! */
+    color: #f5f5f7 !important;
 }
+
+.slice-dark .feature-text h2 {
+    color: #f5f5f7 !important; 
+}
+
+.slice-dark .feature-text p {
+    color: #86868b !important; 
+}
+
+.glowing-text {
+    color: #00bfff !important; 
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
+.hydro-fade {
+    background: linear-gradient(135deg, #00bfff, #0066cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   6. Cinematic Scroll-Driven Dark Fade Engine 
+   ========================================================================== */
+@supports (animation-timeline: scroll()) {
+    .scroll-fade-zone {
+        view-timeline-name: --section-fade;
+        view-timeline-axis: block;
+        background-color: #fafafa;
+        animation-name: plungeIntoDarkness;
+        animation-timeline: --section-fade;
+        animation-fill-mode: both;
+        animation-range: entry 0% entry 80%;
+    }
+
+    @keyframes plungeIntoDarkness {
+        0% { background-color: #fafafa; }
+        100% { background-color: #000000; }
+    }
+}
+
+@supports not (animation-timeline: scroll()) {
+    .scroll-fade-zone {
+        background-color: #000000;
+    }
+}
+
+.main-nav ul li a.glowing-nav {
+    color: #00bfff;
+    font-weight: 700;
+    transition: text-shadow 0.3s ease;
+}
+.main-nav ul li a.glowing-nav:hover {
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+}
+
+/* ==========================================================================
+   7. Apple-Style Product Comparison Shelf (Dark-Mode Section)
+   ========================================================================== */
+.product-shelf-zone {
+    background-color: #000000;
+    padding: 6rem 2rem;
+    color: #f5f5f7;
+    border-top: 1px solid #121212;
+}
+
+.shelf-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.shelf-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.apple-link, .card-cta-link {
+    color: #0066cc; /* Apple's beautiful system accent blue link color */
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.apple-link:hover, .card-cta-link:hover {
+    text-decoration: underline;
+}
+
+.chevron {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+    margin-left: 2px;
+}
+
+/* Mobile responsive alignment tracking: single column flow stack */
+.product-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #0b0b0c; /* High-end subtle charcoal contrast block */
+    padding: 2.5rem 1.5rem;
+    border-radius: 18px; /* Smooth rounded Apple display corners */
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Elegant interactive hover rise */
+}
+
+.card-graphic {
+    width: 100%;
+    max-width: 220px;
+    height: 240px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.card-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Custom individual color branding tags for character elements */
+.card-eyebrow.Electro { color: #b070ff; }
+.card-eyebrow.Cryo { color: #90caf9; }
+.card-eyebrow.Dendro { color: #a5d6a7; }
+
+.card-tagline {
+    font-size: 0.95rem;
+    color: #f5f5f7;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: #86868b; /* Apple's custom secondary gray copy color */
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    min-height: 60px; /* Keeps text columns balanced even if lengths differ */
+}
+
+/* ==========================================================================
+   Desktop Grid Realignment Breakpoint Update (768px+)
+   ========================================================================== */
+@media only screen and (min-width: 768px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Snaps cards side-by-side cleanly */
+        gap: 2rem;
+    }
+    
+    .shelf-header h2 {
+        font-size: 3rem;
+    }
+}
+
