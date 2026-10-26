@@ -355,6 +355,52 @@ main .slice-dark,
 }
 
 /* ==========================================================================
+   7b. Premium Elemental Hover Glow Effects
+   ========================================================================== */
+
+/* 1. Refine the base card transition matrix to handle shadows smoothly */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.4s ease;
+}
+
+/* 2. Custom specialized glowing drop-shadows based on element classes */
+
+/* Raiden Shogun: Electro Aura (Soft Purple Glow) */
+.product-card:has(.Electro):hover {
+    transform: translateY(-8px) scale(1.01);
+    background-color: #0f0a16; /* Deep purple charcoal shift */
+    box-shadow: 0 20px 40px rgba(176, 112, 255, 0.15), 
+                0 0 20px rgba(176, 112, 255, 0.05);
+}
+
+/* Columbina: Cryo Aura (Soft Frost Blue Glow) */
+.product-card:has(.Cryo):hover {
+    transform: translateY(-8px) scale(1.01);
+    background-color: #0a1118; /* Deep frost charcoal shift */
+    box-shadow: 0 20px 40px rgba(144, 202, 249, 0.15), 
+                0 0 20px rgba(144, 202, 249, 0.05);
+}
+
+/* Nahida: Dendro Aura (Soft Emerald Green Glow) */
+.product-card:has(.Dendro):hover {
+    transform: translateY(-8px) scale(1.01);
+    background-color: #0a140d; /* Deep meadow charcoal shift */
+    box-shadow: 0 20px 40px rgba(165, 214, 167, 0.15), 
+                0 0 20px rgba(165, 214, 167, 0.05);
+}
+
+/* 3. Give the artwork inside the hovered card a subtle responsive lift */
+.product-card:hover .card-img {
+    transform: scale(1.04);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 0.4s ease;
+}
+
+
+/* ==========================================================================
    Desktop Grid Realignment Breakpoint Update (768px+)
    ========================================================================== */
 @media only screen and (min-width: 768px) {
